@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 
 function ToDoList(props) {
   console.log("todolist props", props);
@@ -8,17 +8,21 @@ function ToDoList(props) {
   };
 
   return (
-    <div>
+    <div className="todo-container">
       {props.item.map(item => (
-        <li
-          onClick={() => props.toggle(item.id)}
-          className={`todo${item.completed ? " done" : ""}`}
-          key={item.id}
-        >
-          ToDo: {item.item}
-        </li>
+        <div className="todo-item">
+          <li
+            onClick={() => props.toggle(item.id)}
+            className={`todo${item.completed ? " done" : ""}`}
+            key={item.id}
+          >
+            ToDo: {item.item}
+          </li>
+        </div>
       ))}
-      <button onClick={clearDone}>Clear Done</button>
+      <button className="clear-button" onClick={clearDone}>
+        Clear Done
+      </button>
     </div>
   );
 }

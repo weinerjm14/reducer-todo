@@ -7,6 +7,16 @@ const InitialState = {
       completed: false,
       id: 3892987589,
     },
+    {
+      item: "Learn about redux",
+      completed: false,
+      id: 3892987582,
+    },
+    {
+      item: "Play with kitty",
+      completed: false,
+      id: 3892987589,
+    },
   ],
 };
 const Reduce = (state, action) => {
@@ -29,17 +39,17 @@ const Reduce = (state, action) => {
         ...state,
         toDoItems: state.toDoItems.map(item => {
           if (item.id === action.payload) {
-            return { ...item, completed: !item.completed}
+            return { ...item, completed: !item.completed };
           } else {
-            return item
+            return item;
           }
-        })
+        }),
       };
 
     case "CLEAR_COMPLETE":
       return {
         ...state,
-        toDoItems: state.toDoItems.filter((item) => !item.completed),
+        toDoItems: state.toDoItems.filter(item => !item.completed),
       };
 
     default:
