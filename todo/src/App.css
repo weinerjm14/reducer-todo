@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+.done {
+  text-decoration: line-through;
+  color: mediumseagreen;
+}
+li {
+  list-style-type: none;
+}
+.todo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.todo-item {
+  background-color: ivory;
+  width: 25%;
+  height: 5vh;
+  text-align: center;
+  border: 2px inset black;
+  margin-top: 1%;
+}
+.clear-button {
+  margin-top: 1%;
+}
